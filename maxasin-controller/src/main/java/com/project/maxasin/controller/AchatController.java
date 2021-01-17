@@ -23,7 +23,7 @@ public class AchatController {
 	AchatService metier;
 	@GetMapping("/achat/page={page}&size={size}")
    public Page<Achats> listAchats(@PathVariable("page") int page,@PathVariable("size") int size) {
-	return metier.listAchats( PageRequest.of(page, size));
+	return metier.listAchats(PageRequest.of(page, size));
 }
 
    @DeleteMapping("/achat/{id}")

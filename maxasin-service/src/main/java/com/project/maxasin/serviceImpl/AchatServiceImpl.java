@@ -34,10 +34,15 @@ public class AchatServiceImpl implements AchatService {
 
 	@Transactional
 	public Achats achatProduit(Achats achats) {
+	double x = 0;
      boolean test = false;
      Produit p = new Produit(); 
 	 Achats achat = repoAchat.save(achats);
-	 double x = (achat.getMontant()/achat.getQuantite());
+	 try {
+	  x = (achat.getMontant()/achat.getQuantite());}
+	 catch(ArithmeticException e) {
+		 System.out.println(e.getMessage());
+	 }
 	 achat.setDateAchat(new Date());
 	 Stock s = new Stock();
 	 String produit = achat.getNomProduit();

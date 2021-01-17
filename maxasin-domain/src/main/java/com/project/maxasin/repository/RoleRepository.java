@@ -7,6 +7,6 @@ import com.project.maxasin.security.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Long>  {
 
-	public Role findRoleByRolename(String rolename);
+	public Role findRoleByRoleName(String rolename);
 	
 }
